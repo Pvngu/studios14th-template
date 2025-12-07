@@ -1,0 +1,13 @@
+---
+import {
+  useNestedTranslations,
+  getLang,
+} from "../../lib/i18n";
+
+const { currentLocale } = Astro;
+const t = useNestedTranslations(currentLocale);
+---
+
+<footer>
+  Footer works!
+</footer>

@@ -1,0 +1,1 @@
+// basic data about the business here such as name, description, and social media links

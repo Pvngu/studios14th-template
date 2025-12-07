@@ -1,0 +1,13 @@
+---
+import { useNestedTranslations } from "../../lib/i18n";
+
+const { currentLocale } = Astro;
+
+const t = useNestedTranslations(currentLocale);
+---
+
+<div>
+  <section>
+    Hero Works!
+  </section>
+</div>

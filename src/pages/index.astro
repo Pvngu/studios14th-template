@@ -1,0 +1,11 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.astro';
+import { useNestedTranslations } from '@lib/i18n';
+const { currentLocale } = Astro;
+const t = useNestedTranslations(currentLocale);
+---
+
+<Layout title={t("meta.home.title")} description={t("meta.home.description")}>
+  <Hero />
+</Layout>

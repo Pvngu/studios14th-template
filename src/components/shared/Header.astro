@@ -1,0 +1,9 @@
+---
+import { useNestedTranslations, getLocalizedPath } from "@lib/i18n";
+const currentLocale = Astro.currentLocale;
+const t = useNestedTranslations(currentLocale);
+---
+
+<header id="header" class="font-inter fixed w-full z-50">
+  header works!
+</header>

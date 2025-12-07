@@ -1,0 +1,36 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const { currentLocale, url } = Astro;
+
+// Remove a leading locale prefix (e.g. `/en` or `/es`) so
+// `getRelativeLocaleUrl` doesn't duplicate the locale when given
+// a pathname that already contains it.
+const LOCALES = ['en', 'es'];
+function stripLocalePrefix(pathname: string): string {
+  if (!pathname) return pathname;
+  for (const l of LOCALES) {
+    const prefix = `/${l}`;
+    if (pathname === prefix) return '/';
+    if (pathname.startsWith(prefix + '/')) return pathname.slice(prefix.length);
+  }
+  return pathname;
+}
+---
+<div>
+  <a 
+    href={getRelativeLocaleUrl('es', stripLocalePrefix(url.pathname))}
+    aria-current={currentLocale === 'es'}
+  >
+    ES
+  </a>
+  
+  <span>|</span>
+  
+  <a 
+    href={getRelativeLocaleUrl('en', stripLocalePrefix(url.pathname))}
+    aria-current={currentLocale === 'en'}
+  >
+    EN
+  </a>
+</div>

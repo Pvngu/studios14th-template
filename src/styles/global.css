@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-gilda: 'Gilda Display', serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* --- Primitives --- */
+  /* Blues */
+  --color-blue-steel: #4A6C8A;
+  /* Was brand */
+  --color-blue-sky: #3E98D9;
+  /* Was primary */
+  --color-blue-royal: #2663EB;
+  /* Was accent */
+  --color-blue-pale: #5E95CC;
+  /* Was accent-hover */
+  --color-blue-ice: #F0F9FF;
+  /* Was surface-highlight */
+
+  /* Grays / Neutrals */
+  --color-slate-dark: #252D3A;
+  /* Was brand-dark */
+  --color-gray-light: #B0B8C0;
+  /* Was neutral */
+  --color-gray-dim: #8A94A0;
+  /* Was neutral-dim */
+  --color-gray-pale: #F5F5F5;
+  /* Was surface-light */
+  --color-gray-text: #D1D5DB;
+  /* Was text-secondary */
+  --color-gray-dark: #4A4A4A;
+  /* Was text-secondary-light */
+
+  /* Base */
+  --color-black-rich: #121212;
+  /* Was surface */
+  --color-white: #FFFFFF;
+  --color-navy-deep: #1A3D5C;
+  /* Was text-primary-light */
+
+  /* --- Semantics --- */
+
+  /* Main Actions */
+  --color-primary: var(--color-blue-sky);
+  --color-primary-foreground: var(--color-white);
+
+  /* Secondary Actions / Brand */
+  --color-secondary: var(--color-blue-steel);
+  --color-secondary-dark: var(--color-slate-dark);
+
+  /* Accents */
+  --color-accent: var(--color-blue-royal);
+  --color-accent-hover: var(--color-blue-pale);
+  --color-accent-foreground: var(--color-white);
+
+  /* Backgrounds */
+  --color-background: var(--color-black-rich);
+  --color-surface: var(--color-black-rich);
+  /* Keeping alias for compatibility if needed, or deprecate */
+  --color-surface-highlight: var(--color-blue-ice);
+  --color-surface-light: var(--color-gray-pale);
+
+  /* Text */
+  --color-text-main: var(--color-white);
+  /* Was text-primary */
+  --color-text-muted: var(--color-gray-text);
+  /* Was text-secondary */
+  --color-text-dark: var(--color-navy-deep);
+  /* Was text-primary-light */
+  --color-text-dim: var(--color-gray-dim);
+  /* Was neutral-dim */
+
+  /* Borders */
+  --color-border: var(--color-gray-light);
+  /* Was neutral */
+  --color-border-dim: var(--color-gray-dim);
+}
+
+@layer base {
+  h1 {
+    @apply font-gilda;
+    font-size: clamp(2.25rem, 3.6vw + 2rem, 6rem);
+    line-height: 1.05;
+    margin: 0 0 0.5rem 0;
+  }
+
+  h2 {
+    @apply font-gilda text-text-main;
+    font-size: clamp(1.7rem, 2.8vw + 0.6rem, 3rem);
+  }
+
+  h3 {
+    @apply font-gilda text-text-main;
+    font-size: clamp(1.5rem, 2.4vw + 0.5rem, 1.875rem);
+  }
+
+  h4 {
+    @apply font-gilda text-xl text-text-main;
+  }
+}
