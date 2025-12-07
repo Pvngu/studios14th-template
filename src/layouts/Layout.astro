@@ -7,11 +7,11 @@ import "../styles/global.css";
 const currentLang = Astro.currentLocale || "en";
 
 const rawPath = Astro.url.pathname.replace(/^\/(en|es)/, "") || "/";
-const enHref = `https://h2partyrentals.com${getLocalizedPath(rawPath, "en")}`;
-const esHref = `https://h2partyrentals.com${getLocalizedPath(rawPath, "es")}`;
+const enHref = `https://studios14th.com${getLocalizedPath(rawPath, "en")}`;
+const esHref = `https://studios14th.com${getLocalizedPath(rawPath, "es")}`;
 const defaultHref = enHref;
 
-const canonicalURL = new URL(Astro.url.pathname, "https://h2partyrentals.com");
+const canonicalURL = new URL(Astro.url.pathname, "https://studios14th.com");
 
 interface LayoutProps {
   title?: string;
@@ -28,7 +28,7 @@ const { title = "Page", description = "" } = Astro.props as LayoutProps;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | h2 party rentals</title>
+    <title>{title} | Studios 14th</title>
     <meta name="description" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -52,8 +52,8 @@ const { title = "Page", description = "" } = Astro.props as LayoutProps;
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="h2partyrentals.com" />
-    <meta property="twitter:url" content="https://h2partyrentals.com/" />
+    <meta property="twitter:domain" content="studios14th.com" />
+    <meta property="twitter:url" content="https://studios14th.com/" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/og-image.jpg" />
